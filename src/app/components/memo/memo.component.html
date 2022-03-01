@@ -1,4 +1,7 @@
 <div>
     <p>{{memo.createdAt}}</p>
+    <h3>
+        <fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red' }" (click)="setDeleteMemo()"></fa-icon>
 
+    </h3>
 </div>

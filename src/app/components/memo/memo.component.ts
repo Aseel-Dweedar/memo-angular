@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Memo } from 'src/app/models/Memo';
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
@@ -13,6 +13,14 @@ export class MemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() deleteEventEmitter = new EventEmitter();
+
   @Input() memo!: Memo;
+
+  faTimes = faTimes;
+
+  setDeleteMemo(): void {
+    this.deleteEventEmitter.emit(this.memo?.id);
+  }
 
 }

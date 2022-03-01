@@ -1,2 +1,2 @@
-<app-memo *ngFor="let memo of memos" [memo]="memo">
+<app-memo *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)">
 </app-memo>

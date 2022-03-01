@@ -28,4 +28,11 @@ export class MemosComponent implements OnInit {
     });
   }
 
+
+  public deleteMemo(id: number): void {
+    this.memoService.deleteMemo(id).subscribe({
+      error: (e) => console.error(e),
+    });
+  }
+
 }
