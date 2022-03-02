@@ -1,0 +1,23 @@
+<form #addForm="ngForm" (ngSubmit)="addMemo(addForm)">
+
+    <div class="mb-3">
+        <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" ngModel name="message" id="message" placeholder="message">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" ngModel name="creator" id="creator" placeholder="creator">
+    </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" ngModel name="tags" id="tags" placeholder="tags">
+    </div>
+
+    <input type="file" ngModel name="file" id="file" />
+
+    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+</form>

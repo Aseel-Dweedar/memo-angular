@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Memo } from 'src/app/models/Memo';
 import { MemoService } from 'src/app/services/memo.service';
-
 @Component({
   selector: 'app-memos',
   templateUrl: './memos.component.html',
@@ -28,11 +27,23 @@ export class MemosComponent implements OnInit {
     });
   }
 
-
   public deleteMemo(id: number): void {
     this.memoService.deleteMemo(id).subscribe({
       error: (e) => console.error(e),
     });
+  }
+
+  public addMemo(memo: Memo): void {
+    console.log(memo);
+    // console.log( memo.tags.split(',') );
+    // let tags = memo.tags.split(",");
+    // this.memoService.addMemo(memo).subscribe({
+    //   next: () => this.memoService.getMemos().subscribe({
+    //     next: (response) => this.memos = response,
+    //     error: (e) => console.error(e),
+    //   }),
+    //   error: (e) => console.error(e),
+    // });
   }
 
 }
