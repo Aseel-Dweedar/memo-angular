@@ -29,21 +29,17 @@ export class MemosComponent implements OnInit {
 
   public deleteMemo(id: number): void {
     this.memoService.deleteMemo(id).subscribe({
+      next: () => this.getMemos(),
       error: (e) => console.error(e),
     });
   }
 
   public addMemo(memo: Memo): void {
-    console.log(memo);
-    // console.log( memo.tags.split(',') );
-    // let tags = memo.tags.split(",");
-    // this.memoService.addMemo(memo).subscribe({
-    //   next: () => this.memoService.getMemos().subscribe({
-    //     next: (response) => this.memos = response,
-    //     error: (e) => console.error(e),
-    //   }),
-    //   error: (e) => console.error(e),
-    // });
+    memo.tags = memo.tags.toLocaleString().split(",", memo.tags.length)
+    this.memoService.addMemo(memo).subscribe({
+      next: () => this.getMemos(),
+      error: (e) => console.error(e.message),
+    });
   }
 
 }
