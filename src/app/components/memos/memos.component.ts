@@ -15,6 +15,10 @@ export class MemosComponent implements OnInit {
 
   public memos: Memo[] = [];
 
+  public showUpdateForm: boolean = false;
+
+  public currentMemo: Memo | null = null;
+
   constructor(private memoService: MemoService) { }
 
 
@@ -25,6 +29,12 @@ export class MemosComponent implements OnInit {
       next: (response) => this.memos = response,
       error: (e) => console.error(e),
     });
+  }
+
+  public setShowUpdateForm(memo: Memo): void {
+    this.showUpdateForm = !this.showUpdateForm;
+    this.currentMemo = this.currentMemo ? null : memo;
+    console.log(this.currentMemo);
   }
 
   public deleteMemo(id: number): void {

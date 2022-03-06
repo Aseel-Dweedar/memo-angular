@@ -1,3 +1,4 @@
-<app-form (addFormEmit)="addMemo($event)"></app-form>
-<app-memo *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)">
+<app-form (addFormEmit)="addMemo($event)" [currentMemo]="currentMemo" [showUpdateForm]="showUpdateForm"></app-form>
+<app-memo *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)"
+    (updateEventEmitter)="setShowUpdateForm($event)">
 </app-memo>

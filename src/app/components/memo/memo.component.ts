@@ -15,6 +15,7 @@ export class MemoComponent implements OnInit {
   }
 
   @Output() deleteEventEmitter = new EventEmitter();
+  @Output() updateEventEmitter = new EventEmitter();
 
   @Input() memo!: Memo;
 
@@ -27,8 +28,7 @@ export class MemoComponent implements OnInit {
 
 
   setShowUpdateForm(): void {
-    console.log("show modal");
-
+    this.updateEventEmitter.emit(this.memo);
   }
 
 }

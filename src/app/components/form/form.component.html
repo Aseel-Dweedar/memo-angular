@@ -1,4 +1,4 @@
-<form #addForm="ngForm" (ngSubmit)="addMemo(addForm)">
+<form *ngIf="showUpdateForm" #addForm="ngForm" (ngSubmit)="addMemo(addForm)">
 
     <div class="mb-3">
         <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
