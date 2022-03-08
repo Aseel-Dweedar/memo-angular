@@ -26,7 +26,7 @@ export class MemosComponent implements OnInit {
 
     // this method is return an observable so we need to subscribe (get notified) when the data received
     this.memoService.getMemos().subscribe({
-      next: (response) => this.memos = response,
+      next: (response) => this.memos = response.sort((a, b) => a.id - b.id),
       error: (e) => console.error(e),
     });
   }
@@ -50,8 +50,9 @@ export class MemosComponent implements OnInit {
     });
   }
 
-  public onFormSubmit(memo: Memo): void {
-    memo.tags = memo?.tags.toLocaleString().split(",", memo.tags.length)
+  public async onFormSubmit(memo: Memo): Promise<void> {
+    memo.tags = memo?.tags.toLocaleString().split(",", memo.tags.length);
+    // memo.image = await this.getBase64(memo.image)
     if (this.currentMemo) {
       this.memoService.updateMemo(memo, this.currentMemo.id).subscribe({
         next: () => this.getMemos(),
@@ -67,5 +68,14 @@ export class MemosComponent implements OnInit {
     this.currentMemo = null;
 
   }
+
+  // public getBase64(file: string ): Promise<any> {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => resolve(reader.result);
+  //     reader.onerror = error => reject(error);
+  //   });
+  // }
 
 }

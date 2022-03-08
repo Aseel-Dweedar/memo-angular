@@ -5,9 +5,12 @@
     <p>{{memo.likes}}</p>
     <p>{{memo.message}}</p>
     <p>{{memo.id}}</p>
-    <h3>
+    <img src="{{memo.image}}" alt="{{memo.title}}" />
+    <div>
         <fa-icon [icon]="faThumbsUp" [ngStyle]="{ color: 'blue' }" (click)="setMemoLikes()"></fa-icon>
+    </div>
+    <div>
         <fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red' }" (click)="setDeleteMemo()"></fa-icon>
         <fa-icon [icon]="faPen" [ngStyle]="{ color: 'gray' }" (click)="setShowUpdateForm()"></fa-icon>
-    </h3>
+    </div>
 </div>
