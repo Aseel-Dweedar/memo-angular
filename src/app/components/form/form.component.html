@@ -1,4 +1,6 @@
-<form *ngIf="showUpdateForm" #addForm="ngForm" (ngSubmit)="addMemo(addForm)">
+<form *ngIf="showUpdateForm" #addForm="ngForm" (ngSubmit)="formSubmit(addForm)">
+
+    <input type="hidden" class="form-control" ngModel name="id" id="id" placeholder="id" value="id">
 
     <div class="mb-3">
         <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
@@ -8,7 +10,7 @@
         <input type="text" class="form-control" ngModel name="message" id="message" placeholder="message">
     </div>
 
-    <div class="mb-3">
+    <div *ngIf="!currentMemo" class="mb-3">
         <input type="text" class="form-control" ngModel name="creator" id="creator" placeholder="creator">
     </div>
 

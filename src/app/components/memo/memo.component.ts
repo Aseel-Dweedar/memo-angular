@@ -28,7 +28,7 @@ export class MemoComponent implements OnInit {
 
 
   setShowUpdateForm(): void {
-    this.updateEventEmitter.emit(this.memo);
+    this.updateEventEmitter.emit();
   }
 
 }

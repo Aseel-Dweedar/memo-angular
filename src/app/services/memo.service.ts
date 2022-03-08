@@ -45,8 +45,8 @@ export class MemoService {
     return this.http.post<Memo>(`${this.apiServerUrl}/add`, memo)
   }
 
-  public updateMemo(memo: Memo): Observable<Memo> {
-    return this.http.put<Memo>(`${this.apiServerUrl}/update/${memo.id}`, memo)
+  public updateMemo(memo: Memo, id: number): Observable<Memo> {
+    return this.http.put<Memo>(`${this.apiServerUrl}/update/${id}`, memo)
   }
 
   public updateMemoLikes(memo: Memo): Observable<Memo> {

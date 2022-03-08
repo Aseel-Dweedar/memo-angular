@@ -11,19 +11,16 @@ export class FormComponent implements OnInit {
 
   constructor() { }
 
-  @Output() addFormEmit = new EventEmitter();
+  // @Output() addFormEmit = new EventEmitter();
+  @Output() submitFormEmit = new EventEmitter();
   @Input() showUpdateForm!: boolean;
   @Input() currentMemo!: Memo | null;
 
   ngOnInit(): void {
   }
 
-  addMemo(form: NgForm): void {
-    this.addFormEmit.emit(form.value);
-  }
-
-  public updateMemo(): void {
-    console.log("just here");
+  formSubmit(form: NgForm): void {
+    this.submitFormEmit.emit(form.value);
   }
 
 }

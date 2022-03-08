@@ -31,10 +31,9 @@ export class MemosComponent implements OnInit {
     });
   }
 
-  public setShowUpdateForm(memo: Memo): void {
+  public setShowForm(memo: Memo | null): void {
     this.showUpdateForm = !this.showUpdateForm;
     this.currentMemo = this.currentMemo ? null : memo;
-    console.log(this.currentMemo);
   }
 
   public deleteMemo(id: number): void {
@@ -44,12 +43,22 @@ export class MemosComponent implements OnInit {
     });
   }
 
-  public addMemo(memo: Memo): void {
-    memo.tags = memo.tags.toLocaleString().split(",", memo.tags.length)
+  public onFormSubmit(memo: Memo): void {
+    memo.tags = memo?.tags.toLocaleString().split(",", memo.tags.length)
+    if (this.currentMemo) {
+      this.memoService.updateMemo(memo, this.currentMemo.id).subscribe({
+        next: () => this.getMemos(),
+        error: (e) => console.error(e.message),
+      });
+      return;
+    }
     this.memoService.addMemo(memo).subscribe({
       next: () => this.getMemos(),
       error: (e) => console.error(e.message),
     });
+    this.showUpdateForm = false;
+    this.currentMemo = null;
+
   }
 
 }
