@@ -43,6 +43,13 @@ export class MemosComponent implements OnInit {
     });
   }
 
+  public memoLikesUpdate(id: number): void {
+    this.memoService.updateMemoLikes(id).subscribe({
+      next: () => this.getMemos(),
+      error: (e) => console.error(e),
+    });
+  }
+
   public onFormSubmit(memo: Memo): void {
     memo.tags = memo?.tags.toLocaleString().split(",", memo.tags.length)
     if (this.currentMemo) {

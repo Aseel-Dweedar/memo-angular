@@ -6,6 +6,7 @@
     <p>{{memo.message}}</p>
     <p>{{memo.id}}</p>
     <h3>
+        <fa-icon [icon]="faThumbsUp" [ngStyle]="{ color: 'blue' }" (click)="setMemoLikes()"></fa-icon>
         <fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red' }" (click)="setDeleteMemo()"></fa-icon>
         <fa-icon [icon]="faPen" [ngStyle]="{ color: 'gray' }" (click)="setShowUpdateForm()"></fa-icon>
     </h3>

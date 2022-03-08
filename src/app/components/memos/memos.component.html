@@ -2,5 +2,5 @@
 <app-form (submitFormEmit)="onFormSubmit($event)" [currentMemo]="currentMemo" [showUpdateForm]="showUpdateForm">
 </app-form>
 <app-memo *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)"
-    (updateEventEmitter)="setShowForm(memo)">
+    (updateEventEmitter)="setShowForm(memo)" (likesUpdateEmitter)="memoLikesUpdate(memo.id)">
 </app-memo>
