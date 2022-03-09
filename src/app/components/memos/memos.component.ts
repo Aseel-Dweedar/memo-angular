@@ -51,31 +51,32 @@ export class MemosComponent implements OnInit {
   }
 
   public async onFormSubmit(memo: Memo): Promise<void> {
-    memo.tags = memo?.tags.toLocaleString().split(",", memo.tags.length);
-    // memo.image = await this.getBase64(memo.image)
+    memo.tags = memo?.tags?.toLocaleString().split(",", memo.tags.length);
     if (this.currentMemo) {
-      this.memoService.updateMemo(memo, this.currentMemo.id).subscribe({
-        next: () => this.getMemos(),
-        error: (e) => console.error(e.message),
-      });
-      return;
+      this.updateMemo(memo, this.currentMemo.id);
+    } else {
+      this.addMemo(memo);
     }
+    this.formClose();
+  }
+
+  private updateMemo(memo: Memo, id: number): void {
+    this.memoService.updateMemo(memo, id).subscribe({
+      next: () => this.getMemos(),
+      error: (e) => console.error(e.message),
+    });
+  }
+
+  private addMemo(memo: Memo): void {
     this.memoService.addMemo(memo).subscribe({
       next: () => this.getMemos(),
       error: (e) => console.error(e.message),
     });
-    this.showUpdateForm = false;
-    this.currentMemo = null;
-
   }
 
-  // public getBase64(file: string ): Promise<any> {
-  //   return new Promise((resolve, reject) => {
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL(file);
-  //     reader.onload = () => resolve(reader.result);
-  //     reader.onerror = error => reject(error);
-  //   });
-  // }
+  public formClose(): void {
+    this.showUpdateForm = false;
+    this.currentMemo = null;
+  }
 
 }

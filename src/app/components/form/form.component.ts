@@ -12,6 +12,7 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   @Output() submitFormEmit = new EventEmitter();
+  @Output() formCloseEmit = new EventEmitter();
   @Input() showUpdateForm!: boolean;
   @Input() currentMemo!: Memo | null;
 
@@ -22,6 +23,10 @@ export class FormComponent implements OnInit {
   public async formSubmit(form: NgForm): Promise<void> {
     form.value.image = this.image;
     this.submitFormEmit.emit(form.value);
+  }
+
+  public handleFormClose(): void {
+    this.formCloseEmit.emit();
   }
 
   public async fileChangeEvent(fileInput: any): Promise<void> {
