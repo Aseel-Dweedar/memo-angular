@@ -1,8 +1,10 @@
-<button (click)="setShowForm(null)">Add Memo</button>
 <app-form (submitFormEmit)="onFormSubmit($event)" (formCloseEmit)="formClose()" [currentMemo]="currentMemo"
     [showUpdateForm]="showUpdateForm">
 </app-form>
 <div class="card-container">
+
+    <button class="memoComponent" (click)="setShowForm(null)">Add Memo</button>
+
     <app-memo class="memoComponent" *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)"
         (updateEventEmitter)="setShowForm(memo)" (likesUpdateEmitter)="memoLikesUpdate(memo.id)">
     </app-memo>

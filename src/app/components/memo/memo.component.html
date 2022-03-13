@@ -1,23 +1,33 @@
 <div class="oneCard">
-    <img style="height: 200px;" src="{{memo.image}}" alt="{{memo.title}}">
-    <p>{{memo.creator}}</p>
 
-    <div>
+    <div class="cardHead">
+        <img style="height: 200px;" src="{{memo.image}}" alt="{{memo.title}}">
+        <div class="creatorContainer">
+            <p>{{memo.creator}}</p>
+            <p>{{memo.createdAt}}</p>
+        </div>
+    </div>
+
+    <div class="cardBody">
+
         <h5>{{memo.title}}</h5>
-        <p>{{memo.createdAt}}</p>
         <p>{{memo.message}}</p>
         <p>
-            <span *ngFor="let tag of memo.tags"> #{{tag}}, </span>
+            <span [ngStyle]="{ color: 'gray'  }" *ngFor="let tag of memo.tags"> #{{tag}} </span>
         </p>
-    </div>
-    <div>
-        <p>
-            <fa-icon [icon]="faThumbsUp" [ngStyle]="{ color: 'blue' }" (click)="setMemoLikes()"></fa-icon>
-            <span> {{memo.likes}} </span>
-        </p>
-        <p>
-            <fa-icon [icon]="faPen" [ngStyle]="{ color: 'gray' }" (click)="setShowUpdateForm()"></fa-icon>
-            <fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red' }" (click)="setDeleteMemo()"></fa-icon>
-        </p>
+
+        <div class="cardEvents">
+            <p>
+                <fa-icon [icon]="faThumbsUp" [ngStyle]="{ color: 'blue' }" (click)="setMemoLikes()"></fa-icon>
+                <span> {{memo.likes}} </span>
+            </p>
+            <p>
+                <fa-icon [icon]="faPen" [ngStyle]="{ color: 'gray'  }" (click)="setShowUpdateForm()">
+                </fa-icon>
+                <fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red', margin:'10px'}" (click)="setDeleteMemo()">
+                </fa-icon>
+            </p>
+        </div>
+
     </div>
 </div>
