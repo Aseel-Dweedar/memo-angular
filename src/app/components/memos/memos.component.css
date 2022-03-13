@@ -1,0 +1,32 @@
+.card-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+[class*="memoComponent"] {
+    width: 95%;
+}
+  
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .memoComponent {
+      width: 45%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .memoComponent {
+      width: 30%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+    .memoComponent {
+        width: 23%;
+    }
+}
+
+
