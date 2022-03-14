@@ -3,16 +3,18 @@ form {
     min-width: 50%;
     max-width:85%;
     border : 1px solid #ddd;
-    border-radius: 10px;
-    color : #062C30;
+    color : #534340;
+    border-radius: 20px;
 }
 
 .formHead {
     padding: 15px;
+    background-color:#BB9981;
+    border-top-right-radius:20px ;
+    border-top-left-radius:20px ;
 }
 
 .formBody {
-    border : 1px solid #ddd;
     padding: 20px;
 }
 
@@ -20,10 +22,20 @@ form {
     padding: 15px;
     display: flex;
     flex-direction: row;
-    justify-content:flex-end
+    justify-content:flex-end;
+    background-color:#BB9981;
+    border-bottom-right-radius:20px ;
+    border-bottom-left-radius:20px ;
+
 }
 
+button:last-of-type {
+    background-color:#C5D8A4;
+    color : #534340;
+    font-weight: bold;
+
+}
 button:first-of-type {
-    color : #062C30;
+    color : #534340;
     margin-right: 10px;
 }

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Roboto&display=swap');
+
+#headerContainer {
+    padding:10px;
+    margin: 20px ;
+    background-color:#534340;
+    border-radius: 30px;
+}
+
+#innerDiv {
+    color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    border-radius: 30px;
+    border:1px solid #F4FCD9;
+    padding:20px;
+}
+
+h4 {
+    font-family: 'Hubballi', cursive;
+    font-size: 2em;
+}
+
+img {
+    height: 40px;
+}
