@@ -81,4 +81,10 @@ export class MemosComponent implements OnInit {
     this.currentMemo = null;
   }
 
+  public test(event: Event): void {
+    if ((event.target as HTMLInputElement).className === "formContainer") {
+      this.formClose();
+    }
+  }
+
 }

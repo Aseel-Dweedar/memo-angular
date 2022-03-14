@@ -1,9 +1,6 @@
-<div *ngIf="showUpdateForm" class="formContainer">
-
-    <app-form (submitFormEmit)="onFormSubmit($event)" (formCloseEmit)="formClose()" [currentMemo]="currentMemo">
-    </app-form>
-
-</div>
+<app-form (click)="test($event)" *ngIf="showUpdateForm" class="formContainer" (submitFormEmit)="onFormSubmit($event)"
+    (formCloseEmit)="formClose()" [currentMemo]="currentMemo">
+</app-form>
 
 <div class="card-container">
 

@@ -2,32 +2,36 @@
 
     <input type="hidden" class="form-control" ngModel name="id" id="id" placeholder="id" value="id">
 
-    <div class="mb-3">
-        <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
+    <div class="formHead">
+        <h3>Hi</h3>
     </div>
 
-    <div class="mb-3">
-        <input type="text" class="form-control" ngModel name="message" id="message" placeholder="message">
-    </div>
+    <div class="formBody">
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
+        </div>
 
-    <div *ngIf="!currentMemo" class="mb-3">
-        <input type="text" class="form-control" ngModel name="creator" id="creator" placeholder="creator">
-    </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="message" id="message" placeholder="message">
+        </div>
 
-    <div class="mb-3">
-        <input type="text" class="form-control" ngModel name="tags" id="tags" placeholder="tags">
-    </div>
+        <div *ngIf="!currentMemo" class="mb-3">
+            <input type="text" class="form-control" ngModel name="creator" id="creator" placeholder="creator">
+        </div>
 
-
-    <div class="formBottom">
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="tags" id="tags" placeholder="tags">
+        </div>
 
         <input type="file" (change)="fileChangeEvent($event)">
 
-        <div>
-            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
 
-            <button type="click" (click)="handleFormClose()" class="btn btn-muted">Cancel</button>
-        </div>
+    <div class="formBottom">
+
+        <button type="click" (click)="handleFormClose()" class="btn btn-outline-secondary">Cancel</button>
+
+        <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Submit</button>
 
     </div>
 
