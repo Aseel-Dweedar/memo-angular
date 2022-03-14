@@ -1,11 +1,19 @@
-<app-form (submitFormEmit)="onFormSubmit($event)" (formCloseEmit)="formClose()" [currentMemo]="currentMemo"
-    [showUpdateForm]="showUpdateForm">
-</app-form>
+<div *ngIf="showUpdateForm" class="formContainer">
+
+    <app-form (submitFormEmit)="onFormSubmit($event)" (formCloseEmit)="formClose()" [currentMemo]="currentMemo">
+    </app-form>
+
+</div>
+
 <div class="card-container">
 
-    <button class="memoComponent" (click)="setShowForm(null)">Add Memo</button>
+    <button class="memoComponent addBtn" (click)="setShowForm(null)">
+        <fa-icon [icon]="faPlus" [ngStyle]="{ color: '#1B1A17' }"></fa-icon>
+        ADD MEMORY
+    </button>
 
     <app-memo class="memoComponent" *ngFor="let memo of memos" [memo]="memo" (deleteEventEmitter)="deleteMemo($event)"
         (updateEventEmitter)="setShowForm(memo)" (likesUpdateEmitter)="memoLikesUpdate(memo.id)">
     </app-memo>
+
 </div>

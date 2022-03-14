@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Memo } from 'src/app/models/Memo';
 import { MemoService } from 'src/app/services/memo.service';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-memos',
   templateUrl: './memos.component.html',
@@ -21,6 +22,7 @@ export class MemosComponent implements OnInit {
 
   constructor(private memoService: MemoService) { }
 
+  faPlus = faPlus;
 
   public getMemos(): void {
 

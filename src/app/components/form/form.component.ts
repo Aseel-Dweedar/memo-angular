@@ -13,7 +13,6 @@ export class FormComponent implements OnInit {
 
   @Output() submitFormEmit = new EventEmitter();
   @Output() formCloseEmit = new EventEmitter();
-  @Input() showUpdateForm!: boolean;
   @Input() currentMemo!: Memo | null;
 
   ngOnInit(): void { }

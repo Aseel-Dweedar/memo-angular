@@ -21,6 +21,16 @@ export class MemoComponent implements OnInit {
 
   @Input() memo!: Memo;
 
+  /*\
+  // get hight of div
+  @Output() height: number = 0;
+  @ViewChild('oneCard') oneCard!: ElementRef;
+  ngAfterViewInit() {
+    this.height = this.oneCard.nativeElement.offsetHeight;
+  }
+  */
+
+
   faTimes = faTimes;
   faPen = faPen;
   faThumbsUp = faThumbsUp;

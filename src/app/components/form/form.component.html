@@ -1,4 +1,4 @@
-<form *ngIf="showUpdateForm" #addForm="ngForm" (ngSubmit)="formSubmit(addForm)">
+<form #addForm="ngForm" (ngSubmit)="formSubmit(addForm)">
 
     <input type="hidden" class="form-control" ngModel name="id" id="id" placeholder="id" value="id">
 
@@ -18,10 +18,17 @@
         <input type="text" class="form-control" ngModel name="tags" id="tags" placeholder="tags">
     </div>
 
-    <input type="file" (change)="fileChangeEvent($event)">
 
-    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <div class="formBottom">
 
-    <button type="click" (click)="handleFormClose()" class="btn btn-muted">Cancel</button>
+        <input type="file" (change)="fileChangeEvent($event)">
+
+        <div>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+            <button type="click" (click)="handleFormClose()" class="btn btn-muted">Cancel</button>
+        </div>
+
+    </div>
 
 </form>

@@ -5,10 +5,29 @@
     align-items: center;
 }
 
-[class*="memoComponent"] {
-    width: 95%;
-    margin-bottom: 20px;
+.addBtn {
+    background-color : #E3CAA5 ;
+    font-size:1.5em;
+    color:#534340;
+    height: 381px;
+    cursor: pointer; 
 }
+
+.addBtn:hover {
+    transform: scale(1.03);
+}
+
+@media only screen and (max-width: 600px) {
+    /* For mobile: */
+    .memoComponent {
+        width: 95%;
+    }
+    .addBtn {
+    font-size:1em;
+        height:50px;
+    }
+  }
+
   
 @media only screen and (min-width: 600px) {
   /* For tablets: */
@@ -30,3 +49,20 @@
     }
 }
 
+.memoComponent {
+    margin-bottom: 20px;
+}
+
+.formContainer {
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.8);
+    z-index: 10;
+    align-items: center;
+    display: flex;
+    align-items:center;
+    justify-content:center
+}

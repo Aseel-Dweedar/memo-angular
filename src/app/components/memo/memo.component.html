@@ -1,7 +1,13 @@
-<div class="oneCard">
+<div class="oneCard" #oneCard>
 
     <div class="cardHead">
-        <img style="height: 200px;" src="{{memo.image}}" alt="{{memo.title}}">
+
+        <img *ngIf="memo.image ; else placeholder" style="height: 200px;" src="{{memo.image}}" alt="{{memo.title}}" />
+
+        <ng-template #placeholder>
+            <img style="height: 200px;" src="assets/images/memo.jpg" alt="Memo" />
+        </ng-template>
+
         <div class="creatorContainer">
             <p>{{memo.creator}}</p>
             <p>{{memo.createdAt}}</p>
