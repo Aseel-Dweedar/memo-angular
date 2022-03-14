@@ -9,13 +9,15 @@ import { MemoService } from './services/memo.service';
 import { MemosComponent } from './components/memos/memos.component';
 import { MemoComponent } from './components/memo/memo.component';
 import { FormComponent } from './components/form/form.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemosComponent,
     MemoComponent,
-    FormComponent
+    FormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

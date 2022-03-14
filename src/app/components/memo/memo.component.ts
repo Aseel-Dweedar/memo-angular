@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Memo } from 'src/app/models/Memo';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
@@ -21,13 +21,14 @@ export class MemoComponent implements OnInit {
 
   @Input() memo!: Memo;
 
-  /*\
-  // get hight of div
-  @Output() height: number = 0;
-  @ViewChild('oneCard') oneCard!: ElementRef;
-  ngAfterViewInit() {
-    this.height = this.oneCard.nativeElement.offsetHeight;
-  }
+  /*
+    // get hight of div
+    @Output() height: number = 0;
+    @ViewChild('oneCard') oneCard!: ElementRef;
+    ngAfterViewInit() {
+      this.height = this.oneCard.nativeElement.offsetHeight;
+      console.log(this.height);
+    }
   */
 
 

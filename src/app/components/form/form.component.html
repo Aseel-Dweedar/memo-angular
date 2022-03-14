@@ -3,14 +3,19 @@
     <input type="hidden" class="form-control" ngModel name="id" id="id" placeholder="id" value="id">
 
     <div class="formHead">
-        <h3>Hi</h3>
+
+        <h3 *ngIf="currentMemo ; else addMemo">Update Memory</h3>
+
+        <ng-template #addMemo>
+            <h3>ADD MEMORY</h3>
+        </ng-template>
+
     </div>
 
     <div class="formBody">
         <div class="mb-3">
-            <input type="text" class="form-control" ngModel name="title" id="title" placeholder="Title">
+            <input type="text" class="form-control" ngModel name="title" id="title" placeholder="title">
         </div>
-
         <div class="mb-3">
             <input type="text" class="form-control" ngModel name="message" id="message" placeholder="message">
         </div>

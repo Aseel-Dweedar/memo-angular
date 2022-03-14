@@ -44,7 +44,7 @@ img {
     justify-content: space-between;
 }
 
-p {
+p,h5 {
     height: 25px;
     overflow: hidden;
 }
